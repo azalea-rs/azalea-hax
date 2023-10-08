@@ -3,7 +3,7 @@
 use azalea::{
     app::{App, Plugin, PreUpdate},
     ecs::prelude::*,
-    entity::indexing::EntityIdIndex,
+    entity::{indexing::EntityIdIndex, Physics},
     packet_handling::game::PacketEvent,
     prelude::*,
     protocol::packets::game::ClientboundGamePacket,
@@ -52,7 +52,7 @@ pub struct AntiKnockback;
 fn anti_knockback(
     events: ResMut<Events<PacketEvent>>,
     player_query: Query<&EntityIdIndex>,
-    entity_query: Query<(), With<AntiKnockback>>,
+    entity_query: Query<&Physics, With<AntiKnockback>>,
 ) {
     // bevy please merge this https://github.com/bevyengine/bevy/pull/8051
     // :pleading:
@@ -70,8 +70,12 @@ fn anti_knockback(
                 continue;
             };
             // only apply if the entity has the AntiKnockback component
-            if entity_query.get(ecs_entity).is_ok() {
-                (p.xa, p.ya, p.za) = (0, 0, 0);
+            if let Ok(physics) = entity_query.get(ecs_entity) {
+                (p.xa, p.ya, p.za) = (
+                    (physics.delta.x * 8000.) as i16,
+                    (physics.delta.y * 8000.) as i16,
+                    (physics.delta.z * 8000.) as i16,
+                );
             }
         } else if let ClientboundGamePacket::Explode(p) = &mut event.packet {
             // only apply if the entity has the AntiKnockback component
