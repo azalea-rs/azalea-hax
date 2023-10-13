@@ -3,11 +3,9 @@
 use azalea::{
     app::{App, Plugin, PreUpdate},
     ecs::prelude::*,
-    entity::{indexing::EntityIdIndex, Physics},
-    packet_handling::game::PacketEvent,
+    movement::{handle_knockback, KnockbackEvent, KnockbackType},
     prelude::*,
-    protocol::packets::game::ClientboundGamePacket,
-    world::MinecraftEntityId,
+    Vec3,
 };
 
 pub struct HaxPlugin;
@@ -16,8 +14,8 @@ impl Plugin for HaxPlugin {
         app.add_systems(
             PreUpdate,
             anti_knockback
-                .before(azalea::packet_handling::game::process_packet_events)
-                .after(azalea::packet_handling::game::send_packet_events),
+                .after(azalea::packet_handling::game::process_packet_events)
+                .before(handle_knockback),
         );
     }
 }
@@ -50,38 +48,19 @@ impl HaxClientExt for azalea::Client {
 pub struct AntiKnockback;
 
 fn anti_knockback(
-    events: ResMut<Events<PacketEvent>>,
-    player_query: Query<&EntityIdIndex>,
-    entity_query: Query<&Physics, With<AntiKnockback>>,
+    mut events: EventReader<KnockbackEvent>,
+    entity_query: Query<(), With<AntiKnockback>>,
 ) {
     // bevy please merge this https://github.com/bevyengine/bevy/pull/8051
     // :pleading:
     #[allow(invalid_reference_casting)]
     for event in events
-        .iter_current_update_events()
-        // you didn't see anything
-        .map(|e| unsafe { &mut *(e as *const PacketEvent as *mut PacketEvent) })
+        .iter()
+        // shhh you didn't see anything
+        .map(|e| unsafe { &mut *(e as *const KnockbackEvent as *mut KnockbackEvent) })
     {
-        if let ClientboundGamePacket::SetEntityMotion(p) = &mut event.packet {
-            let Ok(entity_id_index) = player_query.get(event.entity) else {
-                continue;
-            };
-            let Some(ecs_entity) = entity_id_index.get(&MinecraftEntityId(p.id)) else {
-                continue;
-            };
-            // only apply if the entity has the AntiKnockback component
-            if let Ok(physics) = entity_query.get(ecs_entity) {
-                (p.xa, p.ya, p.za) = (
-                    (physics.delta.x * 8000.) as i16,
-                    (physics.delta.y * 8000.) as i16,
-                    (physics.delta.z * 8000.) as i16,
-                );
-            }
-        } else if let ClientboundGamePacket::Explode(p) = &mut event.packet {
-            // only apply if the entity has the AntiKnockback component
-            if entity_query.get(event.entity).is_ok() {
-                (p.knockback_x, p.knockback_y, p.knockback_z) = (0., 0., 0.);
-            }
+        if entity_query.get(event.entity).is_ok() {
+            event.knockback = KnockbackType::Add(Vec3::default());
         }
     }
 }

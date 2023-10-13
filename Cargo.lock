@@ -42,9 +42,9 @@ dependencies = [
 
 [[package]]
 name = "aho-corasick"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ea5d730647d4fadd988536d06fecce94b7b4f2a7efdae548f1cf4b63205518ab"
+checksum = "b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0"
 dependencies = [
  "memchr",
 ]
@@ -151,7 +151,7 @@ checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 [[package]]
 name = "azalea"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -189,7 +189,7 @@ dependencies = [
 [[package]]
 name = "azalea-auth"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf",
  "azalea-crypto",
@@ -210,7 +210,7 @@ dependencies = [
 [[package]]
 name = "azalea-block"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-block-macros",
  "azalea-buf",
@@ -220,7 +220,7 @@ dependencies = [
 [[package]]
 name = "azalea-block-macros"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -230,7 +230,7 @@ dependencies = [
 [[package]]
 name = "azalea-brigadier"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf",
  "azalea-chat",
@@ -240,7 +240,7 @@ dependencies = [
 [[package]]
 name = "azalea-buf"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf-macros",
  "byteorder",
@@ -253,7 +253,7 @@ dependencies = [
 [[package]]
 name = "azalea-buf-macros"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -263,7 +263,7 @@ dependencies = [
 [[package]]
 name = "azalea-chat"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf",
  "azalea-language",
@@ -276,7 +276,7 @@ dependencies = [
 [[package]]
 name = "azalea-client"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -316,7 +316,7 @@ dependencies = [
 [[package]]
 name = "azalea-core"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf",
  "azalea-inventory",
@@ -332,7 +332,7 @@ dependencies = [
 [[package]]
 name = "azalea-crypto"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "aes",
  "azalea-buf",
@@ -349,7 +349,7 @@ dependencies = [
 [[package]]
 name = "azalea-entity"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-block",
  "azalea-buf",
@@ -380,7 +380,7 @@ dependencies = [
 [[package]]
 name = "azalea-inventory"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf",
  "azalea-inventory-macros",
@@ -391,7 +391,7 @@ dependencies = [
 [[package]]
 name = "azalea-inventory-macros"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -401,7 +401,7 @@ dependencies = [
 [[package]]
 name = "azalea-language"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "once_cell",
  "serde",
@@ -411,7 +411,7 @@ dependencies = [
 [[package]]
 name = "azalea-nbt"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf",
  "byteorder",
@@ -426,7 +426,7 @@ dependencies = [
 [[package]]
 name = "azalea-physics"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-block",
  "azalea-core",
@@ -444,7 +444,7 @@ dependencies = [
 [[package]]
 name = "azalea-protocol"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "async-compression",
  "async-recursion",
@@ -481,7 +481,7 @@ dependencies = [
 [[package]]
 name = "azalea-protocol-macros"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -491,7 +491,7 @@ dependencies = [
 [[package]]
 name = "azalea-registry"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-buf",
  "azalea-registry-macros",
@@ -502,7 +502,7 @@ dependencies = [
 [[package]]
 name = "azalea-registry-macros"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -512,7 +512,7 @@ dependencies = [
 [[package]]
 name = "azalea-world"
 version = "0.8.0"
-source = "git+https://github.com/azalea-rs/azalea#682609a24e62587094397aab13fda924aa44509e"
+source = "git+https://github.com/azalea-rs/azalea#97ec9f7c7dcb02e7d7447a5fe877386528b8159e"
 dependencies = [
  "azalea-block",
  "azalea-buf",
@@ -1780,9 +1780,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.68"
+version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b1106fec09662ec6dd98ccac0f81cef56984d0b49f75c92d8cbad76e20c005c"
+checksum = "134c189feb4956b20f6f547d2cf727d4c0fe06722b20a0eec87ed445a97f92da"
 dependencies = [
  "unicode-ident",
 ]
@@ -1846,14 +1846,14 @@ dependencies = [
 
 [[package]]
 name = "regex"
-version = "1.9.6"
+version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ebee201405406dbf528b8b672104ae6d6d63e6d118cb10e4d51abbc7b58044ff"
+checksum = "d119d7c7ca818f8a53c300863d4f87566aac09943aef5b355bb83969dae75d87"
 dependencies = [
  "aho-corasick",
  "memchr",
- "regex-automata 0.3.9",
- "regex-syntax 0.7.5",
+ "regex-automata 0.4.1",
+ "regex-syntax 0.8.1",
 ]
 
 [[package]]
@@ -1867,13 +1867,13 @@ dependencies = [
 
 [[package]]
 name = "regex-automata"
-version = "0.3.9"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59b23e92ee4318893fa3fe3e6fb365258efbfe6ac6ab30f090cdcbb7aa37efa9"
+checksum = "465c6fc0621e4abc4187a2bda0937bfd4f722c2730b29562e19689ea796c9a4b"
 dependencies = [
  "aho-corasick",
  "memchr",
- "regex-syntax 0.7.5",
+ "regex-syntax 0.8.1",
 ]
 
 [[package]]
@@ -1884,9 +1884,9 @@ checksum = "f162c6dd7b008981e4d40210aca20b4bd0f9b60ca9271061b07f78537722f2e1"
 
 [[package]]
 name = "regex-syntax"
-version = "0.7.5"
+version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb408a9627d14d451bae12da"
+checksum = "56d84fdd47036b038fc80dd333d10b6aab10d5d31f4a366e20014def75328d33"
 
 [[package]]
 name = "reqwest"
@@ -2059,24 +2059,24 @@ dependencies = [
 
 [[package]]
 name = "semver"
-version = "1.0.19"
+version = "1.0.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad977052201c6de01a8ef2aa3378c4bd23217a056337d1d6da40468d267a4fb0"
+checksum = "836fa6a3e1e547f9a2c4040802ec865b5d85f4014efe00555d7090a3dcaa1090"
 
 [[package]]
 name = "serde"
-version = "1.0.188"
+version = "1.0.189"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cf9e0fcba69a370eed61bcf2b728575f726b50b55cba78064753d708ddc7549e"
+checksum = "8e422a44e74ad4001bdc8eede9a4570ab52f71190e9c076d14369f38b9200537"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.188"
+version = "1.0.189"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4eca7ac642d82aa35b60049a6eccb4be6be75e599bd2e9adb5f875a737654af2"
+checksum = "1e48d1f918009ce3145511378cf68d613e3b3d9137d67272562080d68a2b32d5"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2335,9 +2335,9 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 
 [[package]]
 name = "tokio"
-version = "1.32.0"
+version = "1.33.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "17ed6077ed6cd6c74735e21f37eb16dc3935f96878b1fe961074089cc80893f9"
+checksum = "4f38200e3ef7995e5ef13baec2f432a6da0aa9ac495b2c0e8f3b7eec2c92d653"
 dependencies = [
  "backtrace",
  "bytes",
