@@ -55,7 +55,7 @@ fn anti_knockback(
     // :pleading:
     #[allow(invalid_reference_casting)]
     for event in events
-        .iter()
+        .read()
         // shhh you didn't see anything
         .map(|e| unsafe { &mut *(e as *const KnockbackEvent as *mut KnockbackEvent) })
     {
