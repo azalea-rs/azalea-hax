@@ -48,17 +48,10 @@ impl HaxClientExt for azalea::Client {
 pub struct AntiKnockback;
 
 fn anti_knockback(
-    mut events: EventReader<KnockbackEvent>,
+    mut events: EventMutator<KnockbackEvent>,
     entity_query: Query<(), With<AntiKnockback>>,
 ) {
-    // bevy please merge this https://github.com/bevyengine/bevy/pull/8051
-    // :pleading:
-    #[allow(invalid_reference_casting)]
-    for event in events
-        .read()
-        // shhh you didn't see anything
-        .map(|e| unsafe { &mut *(e as *const KnockbackEvent as *mut KnockbackEvent) })
-    {
+    for event in events.read() {
         if entity_query.get(event.entity).is_ok() {
             event.knockback = KnockbackType::Add(Vec3::default());
         }
